@@ -5,28 +5,30 @@ import { BsGithub, BsGlobe2 } from "react-icons/bs";
 
 type Social = {
   github: string;
-  live: string;
+  live?: string;
 };
 
 type Props = {
   title: string;
-  skills: string[];
+  badges: string[];
   image: string;
   socials: Social;
 };
 
-export default function Project({ title, skills, image, socials }: Props) {
+// hover:scale-105 opacity-80 hover:opacity-100 transition-all ease-in-out duration-200
+
+export default function Project({ title, badges, image, socials }: Props) {
   return (
     <>
-      <div className="mt-6 flex flex-col items-start gap-4 p-4  hover:scale-105 opacity-80 hover:opacity-100 transition-all ease-in-out duration-200">
+      <div className="mt-6 flex flex-col items-start gap-4 p-4 ">
         <h3 className="text-lg lg:text-2xl font-medium">{title}</h3>
         <div className="tags flex gap-1">
-          {skills.map((skill, i) => (
+          {badges.map((badge, i) => (
             <span
               key={i}
               className="rounded-full bg-[#38BDF8] px-3 py-1 text-xs text-white"
             >
-              {skill}
+              {badge}
             </span>
           ))}{" "}
         </div>
@@ -41,17 +43,19 @@ export default function Project({ title, skills, image, socials }: Props) {
         </div>
         <div className="links px-2 flex gap-4">
           <Link href={socials.github} target="_blank">
-            <div className="btncontainer flex gap-1 items-center cursor-pointer ">
-              <span className="text-gray-600"> Github</span>
+            <div className="btncontainer flex gap-2 items-center cursor-pointer rounded-full px-2 py-1 hover:bg-gray-100 ">
+              <span className="text-gray-600 text-lg"> Github</span>
               <BsGithub />
             </div>
           </Link>
-          <Link href={socials.live} target="_blank">
-            <div className="btncontainer flex gap-1 items-center cursor-pointer ">
-              <span className="text-gray-600"> Live</span>
-              <BsGlobe2 />
-            </div>
-          </Link>
+          {socials.live && (
+            <Link href={socials.live} target="_blank">
+              <div className="btncontainer flex gap-2 items-center cursor-pointer rounded-full px-2 py-1 hover:bg-gray-100">
+                <span className="text-gray-600 text-lg"> Live</span>
+                <BsGlobe2 />
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </>

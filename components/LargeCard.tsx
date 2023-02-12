@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Button from "./Buttons/Button";
+import { Button, IconButton } from "components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import Link from "next/link";
 
 type Props = {};
 
@@ -28,18 +29,28 @@ export default function LargeCard({}: Props) {
         <div className="name text-2xl lg:text-3xl">Hello, I’m Jass 🤘🏻</div>
         <h3 className="descript w-52 text-xl md:text-3xl lg:text-4xl md:w-96 leading-relaxed text-center">
           I develop
-          {/* ideas  */}
           <span className="text-blue-400 mx-1 lg:mx-2">ideas</span>
           and help build a better world through software.
         </h3>
         <div className="buttons flex items-center gap-3">
-          <Button value={"Contact"} />
-          <Button
-            icon={<HiOutlineArrowNarrowRight />}
-            outlined
-            value={"Download CV"}
-            className="border-b-2 border-black/50"
-          />
+          <Link
+            href="https://www.linkedin.com/in/jaspreet-singh-bawa/"
+            target="_blank"
+          >
+            <Button value={"Contact"} />
+          </Link>
+
+          <Link
+            href="https://rxresu.me/jassibawa904/jaspreet-singh"
+            target="_blank"
+          >
+            <IconButton
+              icon={<HiOutlineArrowNarrowRight />}
+              outlined
+              value={"Download Resume"}
+              className="border-b-2 border-black/50"
+            />
+          </Link>
         </div>
       </div>
     </section>

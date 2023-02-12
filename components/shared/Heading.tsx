@@ -8,7 +8,9 @@ type Props = {
 export default function Heading({ className, children }: Props) {
   return (
     <h1
-      className={`text-2xl lg:text-5xl w-8 font-medium tracking-widest ${className}`}
+      className={` w-8 font-medium tracking-widest ${
+        className ? className : "text-2xl lg:text-5xl"
+      }`}
     >
       {children}
     </h1>
