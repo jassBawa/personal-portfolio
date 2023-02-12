@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { Header, LargeCard, Projects } from "@/components/";
-// import LargeCard from "@/components/";
+import { AboutMe, Header, LargeCard, Projects } from "@/components/";
 
 export default function Home() {
   return (
@@ -16,6 +15,7 @@ export default function Home() {
         <main>
           <LargeCard />
           <Projects />
+          <AboutMe />
         </main>
       </div>
     </>

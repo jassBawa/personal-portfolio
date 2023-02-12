@@ -5,12 +5,13 @@ type Props = {
   value: String;
   outlined?: Boolean;
   icon?: JSX.Element;
+  className?: String;
 };
 
-function Button({ value, outlined, icon }: Props) {
+function Button({ value, outlined, icon, className }: Props) {
   if (outlined) {
     return (
-      <div className="flex gap-1 items-center ">
+      <div className={`flex gap-1 items-center ${className}`}>
         <button className="text-[#111827] font-medium text-sm md:text-sm opacity-70 outline-none  ">
           {value}
         </button>
@@ -20,9 +21,8 @@ function Button({ value, outlined, icon }: Props) {
   }
   return (
     <button
-      className="bg-[#111827] text-sm md:text-base text-white font-medium rounded-full px-8 py-2 hover:opacity-80 transition-opacity shadow-md
-focus-visible:outline-purple-400
-    "
+      className={`bg-[#111827] text-sm md:text-base text-white font-medium rounded-full px-8 py-2 hover:opacity-80 transition-opacity shadow-md focus-visible:outline-purple-400 ${className}
+    `}
     >
       {value}
     </button>

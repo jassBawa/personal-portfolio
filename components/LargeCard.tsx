@@ -15,17 +15,17 @@ export default function LargeCard({}: Props) {
     
     "
     >
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-6">
         <div className="bg-[#EFFFFA] rounded-full h-16 w-16 flex items-center justify-center">
           <Image
-            src="/profilepic.png"
+            src="/profilepictwo.png"
             alt="profile"
-            width={54}
-            height={54}
-            className="rounded-full object-contain -mt-3"
+            width={58}
+            height={58}
+            className="rounded-full object-contain "
           />
         </div>
-        <div className="name text-3xl">Hello, I’m Jass 🤘🏻</div>
+        <div className="name text-2xl lg:text-3xl">Hello, I’m Jass 🤘🏻</div>
         <h3 className="descript w-52 text-xl md:text-3xl lg:text-4xl md:w-96 leading-relaxed text-center">
           I develop
           {/* ideas  */}
@@ -38,6 +38,7 @@ export default function LargeCard({}: Props) {
             icon={<HiOutlineArrowNarrowRight />}
             outlined
             value={"Download CV"}
+            className="border-b-2 border-black/50"
           />
         </div>
       </div>
