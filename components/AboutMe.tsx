@@ -40,7 +40,7 @@ export default function AboutMe({}: Props) {
         <Heading>About Me</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2  ">
           <div className="flex flex-col mt-16 gap-16 order-2 md:order-1">
-            <div className="border-l-2 border-black p-2 pl-6 text-gray-900 ">
+            <div className="border-l-2 border-black dark:border-gray-100 p-2 pl-6 text-gray-900 dark:text-gray-100 ">
               <p>
                 I&apos;m 21 years old frontend developer, with 1+ year of
                 experience in building modern and scaleable frontends with react

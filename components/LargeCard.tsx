@@ -17,7 +17,7 @@ export default function LargeCard({}: Props) {
     "
     >
       <div className="flex flex-col items-center gap-6">
-        <div className="bg-[#EFFFFA] rounded-full h-16 w-16 flex items-center justify-center">
+        <div className="bg-[#EFFFFA] shadow-md shadow-teal-100 rounded-full h-16 w-16 flex items-center justify-center">
           <Image
             src="/profilepictwo.png"
             alt="profile"
@@ -26,8 +26,10 @@ export default function LargeCard({}: Props) {
             className="rounded-full object-contain "
           />
         </div>
-        <div className="name text-2xl lg:text-3xl">Hello, I’m Jass 🤘🏻</div>
-        <h3 className="descript w-52 text-xl md:text-3xl lg:text-4xl md:w-96 leading-relaxed text-center">
+        <div className="name text-2xl lg:text-3xl text-gray-900">
+          Hello, I’m Jass 🤘🏻
+        </div>
+        <h3 className="descript text-gray-900 w-52 text-xl md:text-3xl lg:text-4xl md:w-96 leading-relaxed text-center">
           I develop
           <span className="text-blue-400 mx-1 lg:mx-2">ideas</span>
           and help build a better world through software.
