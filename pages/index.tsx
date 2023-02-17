@@ -11,19 +11,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-[#FBFEFD] dark:bg-gray-900 h-screen scroll-smooth snap-y md:snap-mandatory overflow-scroll z-0">
+      <div className="bg-[#FBFEFD] dark:bg-gray-900 h-screen scroll-smooth overflow-scroll z-0">
         <Header />
         <main>
-          <div id="hero" className="md:snap-center">
+          <div id="hero" className="">
             <LargeCard />
           </div>
-          <div id="projects" className="md:snap-center">
+          <div id="projects" className="">
             <Projects />
           </div>
-          <div id="about" className="md:snap-center">
+          <div id="about" className="">
             <AboutMe />
           </div>
-          <div id="contact" className="md:snap-center">
+          <div id="contact" className="">
             <Contact />
           </div>
         </main>

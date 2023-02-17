@@ -35,7 +35,7 @@ export default function Project({ title, badges, image, socials }: Props) {
           ))}{" "}
         </div>
         <div className="project-image border-[16px] border-x-8 rounded-lg border-red-500">
-          <div className="relative h-44 w-80">
+          <div className="relative h-44 w-72">
             <Image
               src={image}
               alt={image}

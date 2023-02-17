@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import Heading from "./shared/Heading";
-import Skill from "./Skill";
+import { motion } from "framer-motion";
+import Skills from "./Skills";
 
 const skills = [
   {
@@ -40,8 +41,19 @@ export default function AboutMe({}: Props) {
         <Heading>About Me</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2  ">
           <div className="flex flex-col mt-16 gap-16 order-2 md:order-1">
-            <div className="border-l-2 border-black dark:border-gray-100 p-2 pl-6 text-gray-900 dark:text-gray-100 ">
-              <p>
+            <motion.div
+              className="border-l-2 border-black dark:border-gray-100 p-2 pl-6 text-gray-900 dark:text-gray-100 "
+              initial={{ opacity: 0, y: -50 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
                 I&apos;m 21 years old frontend developer, with 1+ year of
                 experience in building modern and scaleable frontends with react
                 and next-js. I love to learn new technology and deliver
@@ -50,22 +62,28 @@ export default function AboutMe({}: Props) {
                 When I am not coding I love to learn about Video editing 🎥 &
                 Color grading.
                 <br />
-              </p>
-              <p className="tracking-widest mt-4 uppercase">Open to work!</p>
-            </div>
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="tracking-widest mt-4 uppercase"
+              >
+                Open to work!
+              </motion.p>
+            </motion.div>
             <div>
-              <Heading className="text-xl lg:text-3xl tracking-wide">
-                Skills
-              </Heading>
-              <div className="flex flex-wrap justify-center px-4 gap-8 items-center  mt-8">
-                {skills.map(({ src, name, size }) => (
-                  <Skill key={name} src={src} name={name} size={size} />
-                ))}
-              </div>
+              <Skills skillList={skills} />
             </div>
           </div>
           <div className="image relative mt-16 md:mt-0 flex items-center justify-center md:order-2 ">
-            <div className="absolute w-[350px] h-[400px]">
+            <div
+              className="absolute w-[350px] h-[400px]"
+              // initial={{ opacity: 0 }}
+              // whileInView={{ opacity: 1 }}
+              // viewport={{ once: true }}
+            >
               <Image
                 src="/vectordrawings.png"
                 alt="drawings"

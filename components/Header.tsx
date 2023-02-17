@@ -5,15 +5,17 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const flamenco = Flamenco({
   subsets: ["latin"],
   weight: ["300", "400"],
 });
 function Header() {
-  const [darkMode, setDarkMode] = useState(false);
-
   const { systemTheme, setTheme, theme } = useTheme();
+  const [darkMode, setDarkMode] = useState(
+    systemTheme === "dark" ? false : true
+  );
 
   const handleDarkMode = (theme: string) => {
     setTheme(theme);
@@ -24,11 +26,29 @@ function Header() {
       <div className="flex dark:text-gray-100 justify-between items-center py-6 px-6 md:px-20">
         <Link href="/">
           <div className="image flex gap-2 items-end">
-            <Image src="/lappy.png" height={42} width={42} alt="lappy" />
-            <span className={` text-lg ${flamenco.className}`}>Jass Bawa</span>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              <Image src="/lappy.png" height={42} width={42} alt="lappy" />
+            </motion.div>
+            <motion.span
+              className={` text-lg ${flamenco.className}`}
+              initial={{ y: -90 }}
+              animate={{ y: 0 }}
+              // style={{ y: -90 }}
+              transition={{ duration: 0.8 }}
+            >
+              Jass Bawa
+            </motion.span>
           </div>
         </Link>
-        <div className="flex items-center gap-8">
+        <motion.div
+          className="flex items-center gap-8"
+          initial={{ x: 400 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1 }}
+        >
           <div className="border rounded-full p-1 border-dashed border-gray-900 dark:border-gray-100 cursor-pointer opacity-90 hover:opacity-100">
             {darkMode ? (
               <MdDarkMode
@@ -60,7 +80,7 @@ function Header() {
               </span>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </header>
   );
