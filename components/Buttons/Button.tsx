@@ -25,8 +25,7 @@ function Button({ value, outlined, className }: Props) {
     </button>
   );
 }
-
-export function IconButton({ value, outlined, icon, className }: Props) {
+function IconButton({ value, outlined, icon, className }: Props) {
   if (outlined) {
     return (
       <div className={`flex gap-1 items-center ${className}`}>
@@ -48,4 +47,8 @@ export function IconButton({ value, outlined, icon, className }: Props) {
   );
 }
 
-export default Button;
+const MemoIconButton = React.memo(IconButton);
+
+export { MemoIconButton as IconButton };
+
+export default React.memo(Button);

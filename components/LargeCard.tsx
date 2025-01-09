@@ -1,13 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
 import { Button, IconButton } from "components";
 import { BsCloudDownload } from "react-icons/bs";
-import Link from "next/link";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-type Props = {};
+function LargeCard() {
 
-export default function LargeCard({}: Props) {
   const [text, count] = useTypewriter({
     words: [
       "Hi, This is Jass Bawa!",
@@ -18,6 +16,7 @@ export default function LargeCard({}: Props) {
     delaySpeed: 2000,
     typeSpeed: 80,
   });
+
   return (
     <section
       className=" max-w-xs md:max-w-3xl lg:max-w-7xl xl:max-w-7xl mx-auto  
@@ -33,25 +32,25 @@ export default function LargeCard({}: Props) {
             alt="profile"
             width={58}
             height={58}
-            className="rounded-full object-contain"
+            className="object-contain rounded-full"
+            priority
           />
         </div>
-        <div className="name text-xl w-3/4 text-center lg:text-3xl text-gray-900">
-          {" "}
+        <div className="w-3/4 text-xl text-center text-gray-900 name lg:text-3xl">
           {text}
           <Cursor cursorColor="#0b89ff" />
         </div>
-        <h3 className="descript text-gray-900 w-52 text-xl lg:text-2xl md:w-96 text-center ">
+        <h3 className="text-xl text-center text-gray-900 descript w-52 lg:text-2xl md:w-96 ">
           I develop
-          <span className="text-blue-400 mx-1 lg:mx-2">ideas</span>
+          <span className="mx-1 text-blue-400 lg:mx-2">ideas</span>
           and help build a better world through software.
         </h3>
-        <div className="buttons flex items-center gap-3">
+        <div className="flex items-center gap-3 buttons">
           <Link
             href="https://www.linkedin.com/in/jaspreet-singh-bawa/"
             target="_blank"
           >
-            <Button value={"Contact"} />
+            <Button value="Contact" />
           </Link>
 
           <Link
@@ -61,8 +60,8 @@ export default function LargeCard({}: Props) {
             <IconButton
               icon={<BsCloudDownload />}
               outlined
-              value={"Resume"}
-              className="border-b-2 border-black/50 py-1 px-2"
+              value="Resume"
+              className="px-2 py-1 border-b-2 border-black/50"
             />
           </Link>
         </div>
@@ -70,3 +69,5 @@ export default function LargeCard({}: Props) {
     </section>
   );
 }
+
+export default LargeCard;

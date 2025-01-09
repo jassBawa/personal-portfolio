@@ -3,11 +3,13 @@ import type { AppProps } from "next/app";
 import { Poppins } from "@next/font/google";
 import { ThemeProvider } from "next-themes";
 
+
 const inter = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-export default function App({ Component, pageProps }: AppProps) {
+
+function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <main className={inter.className}>
@@ -16,3 +18,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   );
 }
+
+export default App;
