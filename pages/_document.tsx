@@ -5,17 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>{/* <!-- Google tag (gtag.js) --> */}</Head>
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-KCVZ9QZK65"
-      />
-      <Script id="google-analytics">
-        {`  window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      <Script defer data-domain="jassbawa-portfolio.vercel.app" src="https://plausible.io/js/script.js"></Script>
 
-        gtag('config', 'G-KCVZ9QZK65');`}
-      </Script>
       <body>
         <Main />
         <NextScript />
